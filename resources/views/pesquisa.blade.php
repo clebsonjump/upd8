@@ -2,57 +2,81 @@
 <html>
 <head>
     <title>Pesquisa de Clientes</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">  
+    <link rel="stylesheet" href="{{ asset('style.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1 class="mt-4">Pesquisa de Clientes</h1>
+    <div class="outer-container" style="max-height: 800px;">
+        <img src="https://www.upd8.com.br/content/agency2/images/logos/logo-Upd8.png" alt="Logo"> 
         
-        <form action="/pesquisa" method="GET" class="mt-3">
+        <div class="inner-container">
+            <h6 class="mt-4">Pesquisa de Clientes</h6>
+        <form action="/pesquisa" method="GET" class="row">
             
+             <div class="col-md-3">
             <div class="form-group">
-                <label>CPF:</label>
-                <input type="text" class="form-control" name="cpf">
+                    <label class="col-form-label" for="cpf">CPF:</label>
+                    <input type="text" class="form-control" name="cpf" id="cpf">
+                </div>
             </div>
 
+            <div class="col-md-3">
             <div class="form-group">
-                <label>Nome:</label>
-                <input type="text" class="form-control" name="nome">
+                    <label for="nome">Nome:</label>
+                    <input type="text" class="form-control" name="nome" id="nome">
+                </div>
             </div>
             
+            <div class="col-md-3">
             <div class="form-group">
-                <label>Data de Nascimento:</label>
-                <input type="date" class="form-control" name="data_nascimento">
+                    <label for="data_nascimento">Data de Nascimento:</label>
+                    <input type="date" class="form-control" name="data_nascimento" id="data_nascimento">
+                </div>
             </div>
             
+            <div class="col-md-3">
             <div class="form-group">
-            <label>Sexo:</label>
-                <select class="form-control" name="sexo">
-                    <option value="">Selecione</option>
-                    <option value="M">Masculino</option>
-                    <option value="F">Feminino</option>
-                </select>
+                    <label>Sexo:</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="sexo" value="M">
+                        <label class="form-check-label" for="sexoM">Masculino</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="sexo" value="F">
+                        <label class="form-check-label" for="sexoF">Feminino</label>
+                    </div>
+                </div>
             </div>
             
+            <div class="col-md-4">
             <div class="form-group">
-                <label>Endereço:</label>
-                <input type="text" class="form-control" name="endereco">
+                    <label for="estado">Estado:</label>
+                    <select class="form-control" name="estado" id="estado">
+                        <option value="" disabled selected>Selecione o estado</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                    </select>
+                </div>
             </div>
             
+            <div class="col-md-4">
             <div class="form-group">
-                <label>Estado:</label>
-                <input type="text" class="form-control" name="estado">
+                    <label for="cidade">Cidade:</label>
+                    <select class="form-control" name="cidade" id="cidade">
+                        <option value="" disabled selected>Selecione o estado primeiro</option>
+                    </select>
+                </div>
             </div>
 
-            <div class="form-group">
-                <label>Cidade:</label>
-                <input type="text" class="form-control" name="cidade">
+            <div class="col-md-12 text-center">
+                <button type="submit" class="btn btn-primary">Pesquisa</button>
+                <button type="reset" class="btn btn-secondary">Limpar</button>
             </div>
-            
-            <button type="submit" class="btn btn-primary">Pesquisar</button>
         </form>
+    </div>
         
-        <h2 class="mt-4">Resultados da Pesquisa:</h2>
+    <div class="inner-container" style="margin-top: 20px;">     
+        <h6 class="mt-4">Resultados da Pesquisa:</h6>
         <div class="table-responsive">
             <table class="table table-bordered">
                 <tr>
@@ -78,5 +102,6 @@
             </table>
         </div>
     </div>
+    <script src="{{ asset('script.js') }}"></script>
 </body>
 </html>
