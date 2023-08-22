@@ -67,7 +67,6 @@
                             <option value="" disabled selected>Selecione o estado</option>
                             <option value="SP">São Paulo</option>
                             <option value="RJ">Rio de Janeiro</option>
-                            <!-- Adicione mais opções de estados aqui -->
                         </select>
                     </div>
                 </div>
@@ -77,7 +76,6 @@
                         <label for="cidade">Cidade:</label>
                         <select class="form-control" name="cidade" id="cidade" required>
                             <option value="" disabled selected>Selecione o estado primeiro</option>
-                            <!-- Opções de cidades serão preenchidas dinamicamente -->
                         </select>
                     </div>
                 </div>
